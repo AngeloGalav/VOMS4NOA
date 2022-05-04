@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+
+  revproxy:
+    image: baltig.infn.it:4567/storm2/ngx_http_voms_module/openresty-voms:openresty-with-njs-latest
+    volumes:
+      - ./nginx_docker_revproxy/nginx.conf:/usr/local/openresty-voms/nginx/conf/nginx.conf
+      - ./nginx_docker_revproxy/scripts/:/usr/local/openresty-voms/nginx/njs/
+      - ./nginx_docker_revproxy/certificates_for_https/:/usr/local/openresty-voms/nginx/conf/certs/
+    ports:
+      - "8081:443"
+
+  opa:
+    image: openpolicyagent/opa:0.39.0-istio
+    volumes:
+      - ./opa/policy.rego:/etc/opa/policy.rego
+      - ./opa/data.json:/etc/opa/data.json
+      - ./opa/config.yaml:/etc/opa/config.yaml
+    command:
+      - run
+      - --server
+      - /etc/opa/policy.rego
+      - /etc/opa/data.json
+      - -c
+      - /etc/opa/config.yaml
+
+  service_server:
+    image: nginx:1.21.6-alpine
+    volumes:
+      - ./nginx_docker_webserver/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx_docker_webserver/src/:/usr/share/nginx/html/
