@@ -34,6 +34,7 @@ RUN wget https://raw.githubusercontent.com/indigo-iam/egi-trust-anchors-containe
 
 # installazione della CA grid in '/etc/grid-security/certificates'
 RUN yum install -y ca-policy-egi-core
+RUN yum install -y openssl
 
 WORKDIR /home/test
 

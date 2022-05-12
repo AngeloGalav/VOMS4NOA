@@ -1,0 +1,1 @@
+curl --cert "../voms-client/certs/x509up_u1000" --key "../voms-client/certs/x509up_u1000" --cacert "../voms-client/certs/user.cert.pem"  "https://pippocnaf.test.example:8081/" 
