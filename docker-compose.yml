@@ -3,6 +3,8 @@ version: "3.9"
 services:
 
   revproxy:
+    build: 
+      dockerfile: nginx_docker_revproxy/Dockerfile
     image: baltig.infn.it:4567/storm2/ngx_http_voms_module/openresty-voms:openresty-with-njs-latest
     volumes:
       - ./nginx_docker_revproxy/nginx.conf:/usr/local/openresty-voms/nginx/conf/nginx.conf
