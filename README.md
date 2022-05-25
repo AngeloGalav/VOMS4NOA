@@ -4,7 +4,7 @@ Proxy VOMS Integration for the OpenResty-OPA reverse proxy infrstructure, thus e
 
 Development is still in progress.
 
-# How to use 
+# Usage
 
 First of all, you'll need to generate a Proxy VOMS using `voms-proxy-init`. To do that, you'll need to enter the `.devcontainer`, which provides easy use to the VOMS services. You can use the `.devcontainer` inside Visual Studio Code by clicking on the icon in the bottom left with the two angled brackets and selecting "Reopen Folder in Container".
 
