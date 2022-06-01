@@ -11,11 +11,10 @@ function authorize_operation(r) {
 
     // caso in cui abbiamo un certificato VOMS
     if (r.variables["voms_user"] != "") {
-        opa_data["voms_user"] = r.variables["voms_user"]; 
+        opa_data["voms_user"] = r.variables["voms_user"];
+        opa_data["voms_vo"] = r.variables["voms_vo"];  
     }
     
-    r.log("[DEBUG REVPROXY]: DATA IS " +  opa_data["voms_user"]);
-
     // pacchetto HTTP da inviare ad
     var opts = {
         method: "POST",
