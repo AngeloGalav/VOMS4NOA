@@ -8,15 +8,12 @@ function authorize_operation(r) {
         "token" : r.headersIn["Authorization"]   // + nome gruppo.
     } ;
     
-    if (r.headersIn["X-VOMS-user"] != "") {
-        // "voms_user" : r.headersIn["X-VOMS-user"],
-        // "voms_vo" : r.headersIn["X-VOMS-VO"]
-        r.log(JSON.stringify(r.headersIn));
-        r.log(JSON.stringify(opa_data));
-        r.log(JSON.stringify(r.variables))
+
+    // caso in cui abbiamo un certificato VOMS
+    if (r.variables["voms_user"] != "") {
+        opa_data["voms_user"] = r.variables["voms_user"]; 
     }
     
-    opa_data["voms_user"] = r.headersIn["X-VOMS-user"]; 
     r.log("[DEBUG REVPROXY]: DATA IS " +  opa_data["voms_user"]);
 
     // pacchetto HTTP da inviare ad
