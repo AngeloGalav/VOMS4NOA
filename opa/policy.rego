@@ -14,8 +14,6 @@ default allow = false # impedisce, se non trova la regola, di dare accesso
 # questo è il caso base
 allow {
     input.uses_jwt == "false"
-    # print 
-    # input.uses_jwt == false
     check_permission
 }
 
@@ -61,4 +59,17 @@ bearer_token := t {
     v := input.token
 	startswith(v, "Bearer ") # controllo che sia effettivamente il bearer_token
 	t := substring(v, count("Bearer "), -1) # prendo il token
+}
+
+
+# ----------------------------------------------
+
+# questo è il caso in cui abbiamo un VOMS-proxy
+allow {
+    input.voms_user != null
+    allow_voms
+}
+
+allow_voms {
+    input.voms_vo == data.groups[_]
 }

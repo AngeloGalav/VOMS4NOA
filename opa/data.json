@@ -39,5 +39,8 @@
         ],
         "/moderator" : [ "report" ], 
         "/banned" : []
-    }
+    },
+    "groups" : [
+        "test.vo"
+    ]
 }
