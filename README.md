@@ -51,4 +51,4 @@ This system relies on the CMS/DN association using the server filesystem. Essent
 - After the user has been authorized, an {DN, FQANS} pair is associated within a cms of the respective FQANS cms pool. You could interpret FQANS as being essentially a group name. 
 - We then associate the DN with the respective pool-uid of the CMS, by making an hard link to the cms file. This way the access is kept atomic. 
 
-This part of the project is now the new focus. 
+This part of the project is now the main focus. 
