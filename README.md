@@ -4,7 +4,7 @@ Proxy VOMS Integration for the OpenResty-OPA reverse proxy infrstructure, thus e
 
 Development is still in progress.
 
-# Usage
+## Usage
 
 First of all, you'll need to generate a Proxy VOMS using `voms-proxy-init`. To do that, you'll need to enter the `.devcontainer`, which provides easy use to the VOMS services. You can use the `.devcontainer` inside Visual Studio Code by clicking on the icon in the bottom left with the two angled brackets and selecting "Reopen Folder in Container".
 
@@ -32,7 +32,7 @@ This final steps will allow you to actually test the infrastructure we just buil
 ```
 
 
-# IN-&-OUTS of a VOMS Proxy
+## IN-&-OUTS of a VOMS Proxy
 
 A VOMS Proxy is a certificate used by the The Virtual Organization Membership Service, which enables Virtual Organization access control in distributed services. 
 You can find more information about VOMS [here](https://italiangrid.github.io/voms/).
@@ -45,7 +45,7 @@ Both parts are standard X509 certificates and can be used for SSL connections.
 
 The server validating the VOMS Proxy will need to check both the user certificate and the VOMS AC. It will also need the standard X509 user certificate, in order to fill the Certificate Chain.  
 
-# Compatibility with the job submission architecture @ INFN CNAF
+## Compatibility with the job submission architecture @ INFN CNAF
 
 This system relies on the CMS/DN association using the server filesystem. Essentially:
 - After the user has been authorized, an {DN, FQANS} pair is associated within a cms of the respective FQANS cms pool. You could interpret FQANS as being essentially a group name. 
