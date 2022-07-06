@@ -54,7 +54,7 @@ This part of the project is now the main focus, but it still very much in the co
 
 
 ## Milestones
-Through the [NGINX-OPA-Authz][https://github.com/AngeloGalav/NGINX-OPA-Authz] repository:
+Through the [NGINX-OPA-Authz](https://github.com/AngeloGalav/NGINX-OPA-Authz) repository:
 - [x] Understading OPA
 - [x] Making a simple RBAC in OPA
 - [x] Adding support for JWT
@@ -63,6 +63,7 @@ Through the [NGINX-OPA-Authz][https://github.com/AngeloGalav/NGINX-OPA-Authz] re
 - [x] Ditching the sidecar in favour of NJS for authorization information parsing
 - [x] Developing a way to interact with this system
 - [x] Adding support for X509 certificates
+
 Through this repository:
 - [x] Understanding VOMS Proxies and how they work
 - [x] Adding VOMS support to the OpenResty revproxy
