@@ -31,7 +31,6 @@ This final steps will allow you to actually test the infrastructure we just buil
 ./debug_requester/simple_curl_test.sh
 ```
 
-
 ## IN-&-OUTS of a VOMS Proxy
 
 A VOMS Proxy is a certificate used by the The Virtual Organization Membership Service, which enables Virtual Organization access control in distributed services. 
@@ -51,4 +50,34 @@ This system relies on the CMS/DN association using the server filesystem. Essent
 - After the user has been authorized, an {DN, FQANS} pair is associated within a cms of the respective FQANS cms pool. You could interpret FQANS as being essentially a group name. 
 - We then associate the DN with the respective pool-uid of the CMS, by making an hard link to the cms file. This way the access is kept atomic. 
 
-This part of the project is now the main focus. 
+This part of the project is now the main focus, but it still very much in the concept process.
+
+
+## Milestones
+Through the [NGINX-OPA-Authz][https://github.com/AngeloGalav/NGINX-OPA-Authz] repository:
+- [x] Understading OPA
+- [x] Making a simple RBAC in OPA
+- [x] Adding support for JWT
+- [x] Developing a RevProxy using NGINX and Docker-compose
+- [x] Integrating the RevProxy with OPA
+- [x] Ditching the sidecar in favour of NJS for authorization information parsing
+- [x] Developing a way to interact with this system
+- [x] Adding support for X509 certificates
+Through this repository:
+- [x] Understanding VOMS Proxies and how they work
+- [x] Adding VOMS support to the OpenResty revproxy
+- [x] Easing the VOMS creation process (.devcontainer integration)
+- [x] Adding VOMS support in OPA
+- [ ] Fully integrate the .devcontainer inside the whole infrastructure (built with docker-compose)    
+- [ ] Enhancing OPA policies
+- [ ] Enhancing the OPA "database"
+- [ ] Enhancing bash scripts for interactions/debugging
+- [ ] Designing mapping system / job submission system (?)
+
+## Known Issues and future developments
+
+As of the right now, the whole system does not allow for easy testing. The data that OPA uses must be modified in other to notice a real change of status. An overhaul of the data used by OPA and, in general, its policies is needed.  
+
+The service server UI also does not work anymore, but we're still deciding if we're going to keep it and/or maintaining it, since the most convenient way of interacting with the system is through the `debug_requester`.
+
+Also, further development of the NGINX configuration is needed to support seamless compatibility between JWT, VOMS and no_cert mode. 
