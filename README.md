@@ -16,9 +16,9 @@ voms-proxy-init -pwstdin -voms test.vo <<< pass
 (You can also create a VOMS proxy using the voms-client container. You can find more info about the voms-client below, but I suggest to stick with the devcontainer).
 
 
-You'll then need to add the `pippocnaf.test.example` host into `/etc/hosts` of your PC: 
+You'll then need to add the `servicecnaf.test.example` host into `/etc/hosts` of your PC: 
 ```
-127.0.0.1  localhost pippocnaf.test.example
+127.0.0.1  localhost servicecnaf.test.example
 ``` 
 
 Subsequently, the NGINX-OPA-Authz infrastructure must be booted using another terminal:

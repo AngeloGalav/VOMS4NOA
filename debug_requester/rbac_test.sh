@@ -27,7 +27,7 @@ if [ "$1" == "--voms" ]; then
         role="$3"
     fi    
     
-    curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --cacert "nginx_docker_revproxy/certificates_for_https/user.cert.pem" "https://pippocnaf.test.example:8081/operation/" -H "X-Role: $role" -H "X-Operation: $operation" -H "X-EnableJWT: false" 
+    curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --cacert "nginx_docker_revproxy/certificates_for_https/user.cert.pem" "https://servicecnaf.test.example:8081/operation/" -H "X-Role: $role" -H "X-Operation: $operation" -H "X-EnableJWT: false" 
     if [ $? -eq 0]; then 
         echo "VOMS authorization completed without errors."
     else 
@@ -42,7 +42,7 @@ elif [ "$1" == "-t" ]; then
         echo "You must input an operation for this tester to work"
         exit 1
     
-    curl -X "POST" "https://pippocnaf.test.example:8081/operation/" -H "Authorization: $defaultJWT" -H "X-EnableJWT: true" -H "X-Operation: $operation"
+    curl -X "POST" "https://servicecnaf.test.example:8081/operation/" -H "Authorization: $defaultJWT" -H "X-EnableJWT: true" -H "X-Operation: $operation"
     if [ $? -eq 0]; then 
         echo "JWT authorization completed without errors."
     else 
@@ -64,5 +64,5 @@ else
     role="$2"
 fi
 
-curl --cert "../nginx_docker_revproxy/certificates_for_https/user.cert.pem" -X "POST" "https://pippocnaf.test.example:8081/operation/" -H "X-Role: $1" -H "X-Operation: $2" -H "X-EnableJWT: false" 
+curl --cert "../nginx_docker_revproxy/certificates_for_https/user.cert.pem" -X "POST" "https://servicecnaf.test.example:8081/operation/" -H "X-Role: $1" -H "X-Operation: $2" -H "X-EnableJWT: false" 
 exit 1
