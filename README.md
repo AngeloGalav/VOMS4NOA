@@ -69,11 +69,12 @@ Through this repository:
 - [x] Adding VOMS support to the OpenResty revproxy
 - [x] Easing the VOMS creation process (.devcontainer integration)
 - [x] Adding VOMS support in OPA
-- [ ] Fully integrate the .devcontainer inside the whole infrastructure (built with docker-compose)    
 - [ ] Enhancing OPA policies
 - [ ] Enhancing the OPA "database"
 - [ ] Enhancing bash scripts for interactions/debugging
-- [ ] Designing mapping system / job submission system (?)
+- [ ] Look for possible improvements in the rev proxy implmentation
+- [ ] 
+- [ ] Measure performance of the whole system and draw conclusions
 
 ## Known Issues and future developments
 
