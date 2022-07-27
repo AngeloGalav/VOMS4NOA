@@ -31,6 +31,8 @@ This final steps will allow you to actually test the infrastructure we just buil
 ./debug_requester/simple_curl_test.sh
 ```
 
+<!-- Aggiungere parte dei metodi di accesso disponibili, aka JWT e VOMS, e come usarli in modo interchangeable -->
+
 ## IN-&-OUTS of a VOMS Proxy
 
 A VOMS Proxy is a certificate used by the The Virtual Organization Membership Service, which enables Virtual Organization access control in distributed services. 
@@ -53,7 +55,7 @@ This system relies on the CMS/DN association using the server filesystem. Essent
 This part of the project is now the main focus, but it still very much in the concept process.
 
 
-## Milestones
+## Milestones & Todos
 Through the [NGINX-OPA-Authz](https://github.com/AngeloGalav/NGINX-OPA-Authz) repository:
 - [x] Understading OPA
 - [x] Making a simple RBAC in OPA
@@ -72,8 +74,10 @@ Through this repository:
 - [ ] Enhancing OPA policies
 - [ ] Enhancing the OPA "database"
 - [ ] Enhancing bash scripts for interactions/debugging
+- [ ] Fix known issues
 - [ ] Look for possible improvements in the rev proxy implmentation
-- [ ] 
+- [ ] Enhancing devcontainer with oidc agent token definition
+- [ ] Integrate system with the StormTape API 
 - [ ] Measure performance of the whole system and draw conclusions
 
 ## Known Issues and future developments
