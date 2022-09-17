@@ -33,12 +33,13 @@ function authorize_operation(r) {
             return;
         }
 
+        // in caso ci sia il campo allow e sia true , allora ritorna il code dato da OPA...
         if (!body.allow) {
             r.return(403);
             return;
         }
 
-        r.return(opa_res.status);
+        r.return(opa_res.status); //... che solitamente è 200. 
     });
 
 }

@@ -71,14 +71,11 @@ Through this repository:
 - [x] Adding VOMS support to the OpenResty revproxy
 - [x] Easing the VOMS creation process (.devcontainer integration)
 - [x] Adding VOMS support in OPA
-- [ ] Enhancing OPA policies
-- [ ] Enhancing the OPA "database"
-- [ ] Enhancing bash scripts for interactions/debugging
 - [ ] Fix known issues
-- [ ] Look for possible improvements in the rev proxy implmentation
 - [ ] Enhancing devcontainer with oidc agent token definition
 - [ ] Integrate system with the StormTape API 
-- [ ] Measure performance of the whole system and draw conclusions
+- [ ] Measure performance of the whole system and draw conclusi ons
+- [ ] Enhancing bash scripts for interactions/debugging
 
 ## Known Issues and future developments
 
