@@ -30,7 +30,19 @@ This final steps will allow you to actually test the infrastructure we just buil
 ```bash
 ./debug_requester/voms_curl_test.sh [role] [operation]
 ```
+If the `debug_tester` is not working, you can still use the `curl` to try and test this system. Here are some examples:
+- Using a VOMS Proxy 
+```
+curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --cacert "nginx_docker_revproxy/certificates_for_https/user.cert.pem" "https://servicecnaf.test.example:8081/operation/" -H "X-Operation: retrieve" -H "X-EnableJWT: false" 
+```
 
+- Using simple authentication information 
+```
+curl  --capath "/etc/grid-security/certificates"  "https://servicecnaf.test.example:8081/operation/" -H "X-Role: moderator" -H "X-Operation: report" -H "X-EnableJWT: false"
+```
+
+
+Obviously, all these command must be executed inside the devcontainer. 
 <!-- Aggiungere parte dei metodi di accesso disponibili, aka JWT e VOMS, e come usarli in modo interchangeable -->
 
 ## IN-&-OUTS of a VOMS Proxy
@@ -45,15 +57,6 @@ The VOMS Proxy is made of 2 parts:
 Both parts are standard X509 certificates and can be used for SSL connections.
 
 The server validating the VOMS Proxy will need to check both the user certificate and the VOMS AC. It will also need the standard X509 user certificate, in order to fill the Certificate Chain.  
-
-## Compatibility with the job submission architecture @ INFN CNAF
-
-This system relies on the CMS/DN association using the server filesystem. Essentially:
-- After the user has been authorized, an {DN, FQANS} pair is associated within a cms of the respective FQANS cms pool. You could interpret FQANS as being essentially a group name. 
-- We then associate the DN with the respective pool-uid of the CMS, by making an hard link to the cms file. This way the access is kept atomic. 
-
-This part of the project is now the main focus, but it still very much in the concept process.
-
 
 ## Milestones & Todos
 Through the [NGINX-OPA-Authz](https://github.com/AngeloGalav/NGINX-OPA-Authz) repository:
