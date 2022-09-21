@@ -28,7 +28,7 @@ docker-compose up
 
 This final steps will allow you to actually test the infrastructure we just built (keep in mind that you mustn't exit the `.devcontainer`):
 ```bash
-./debug_requester/simple_curl_test.sh
+./debug_requester/voms_curl_test.sh [role] [operation]
 ```
 
 <!-- Aggiungere parte dei metodi di accesso disponibili, aka JWT e VOMS, e come usarli in modo interchangeable -->
@@ -71,16 +71,10 @@ Through this repository:
 - [x] Adding VOMS support to the OpenResty revproxy
 - [x] Easing the VOMS creation process (.devcontainer integration)
 - [x] Adding VOMS support in OPA
-- [ ] Fix known issues
+- [x] Fix known issues
 - [ ] Enhancing devcontainer with oidc agent token definition
-- [ ] Integrate system with the StormTape API 
-- [ ] Measure performance of the whole system and draw conclusi ons
+- [ ] Measure performance of the whole system and draw conclusions
 - [ ] Enhancing bash scripts for interactions/debugging
 
-## Known Issues and future developments
-
-As of the right now, the whole system does not allow for easy testing. The data that OPA uses must be modified in other to notice a real change of status. An overhaul of the data used by OPA and, in general, its policies is needed.  
-
-The service server UI also does not work anymore, but we're still deciding if we're going to keep it and/or maintaining it, since the most convenient way of interacting with the system is through the `debug_requester`.
-
-Also, further development of the NGINX configuration is needed to support seamless compatibility between JWT, VOMS and no_cert mode. 
+## Notes
+The service server graphical UI also is not supported anymore. It is suggested to use `debug_requester` for further testing and interacting with the system.
