@@ -28,13 +28,7 @@ function authorize_operation(r) {
 
         var body = JSON.parse(opa_res.responseText);
         
-        if (!body) {
-            r.return(403);
-            return;
-        }
-
-        // in caso ci sia il campo allow e sia true , allora ritorna il code dato da OPA...
-        if (!body.allow) {
+        if (!body || !body.allow) {
             r.return(403);
             return;
         }

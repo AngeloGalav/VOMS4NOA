@@ -9,6 +9,7 @@ services:
       - ./nginx_docker_revproxy/nginx.conf:/usr/local/openresty-voms/nginx/conf/nginx.conf
       - ./nginx_docker_revproxy/scripts/:/usr/local/openresty-voms/nginx/njs/
       - ./nginx_docker_revproxy/certificates_for_https/:/usr/local/openresty-voms/nginx/conf/certs/
+      # - /home/${USER}/.globus/:/usr/local/openresty-voms/nginx/conf/certs/
     ports:
       - "8081:443"
 

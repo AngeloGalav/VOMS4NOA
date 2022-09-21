@@ -40,7 +40,9 @@
         "/moderator" : [ "report" ], 
         "/banned" : []
     },
-    "groups" : [
-        "test.vo"
-    ]
+    "groups" : {
+        "test.vo" : 
+            ["submit", 
+            "report"]
+    }
 }
