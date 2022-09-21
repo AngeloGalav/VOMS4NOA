@@ -31,7 +31,7 @@ This final steps will allow you to actually test the infrastructure we just buil
 ./debug_requester/voms_curl_test.sh [role] [operation]
 ```
 If the `debug_tester` is not working, you can still use the `curl` to try and test this system. Here are some examples:
-- Using a VOMS Proxy 
+- Using a VOMS Proxy (this command must be executed inside the devcontainer in order to use the VOMS Proxy). 
 ```
 curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --cacert "nginx_docker_revproxy/certificates_for_https/user.cert.pem" "https://servicecnaf.test.example:8081/operation/" -H "X-Operation: retrieve" -H "X-EnableJWT: false" 
 ```
@@ -41,8 +41,6 @@ curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --c
 curl  --capath "/etc/grid-security/certificates"  "https://servicecnaf.test.example:8081/operation/" -H "X-Role: moderator" -H "X-Operation: report" -H "X-EnableJWT: false"
 ```
 
-
-Obviously, all these command must be executed inside the devcontainer. 
 <!-- Aggiungere parte dei metodi di accesso disponibili, aka JWT e VOMS, e come usarli in modo interchangeable -->
 
 ## IN-&-OUTS of a VOMS Proxy
