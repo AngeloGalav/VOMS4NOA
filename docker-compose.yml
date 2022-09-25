@@ -1,3 +1,4 @@
+# compose for working with storm tape API
 version: "3.9"
 
 services:
@@ -22,7 +23,7 @@ services:
     command: [run, --server, /etc/opa/policy.rego, /etc/opa/data.json, -c, /etc/opa/config.yaml]
 
   service_server:
-    image: nginx:1.21.6-alpine
-    volumes:
-      - ./nginx_docker_webserver/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx_docker_webserver/src/:/usr/share/nginx/html/
+    image: baltig.infn.it:4567/giaco/storm-tape-poc:latest
+    ports:
+      - "80:8080"
+    command: [/storm-tape-poc/build/storm-tape]
