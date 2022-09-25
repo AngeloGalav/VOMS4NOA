@@ -1,4 +1,4 @@
-# VOMS4NOA
+# VOMS4NOA - Storm-Tape API branch
 
 Proxy VOMS Integration for the OpenResty-OPA reverse proxy infrstructure, thus enabling usage, testing and validation of VOMS Certificates. 
 
