@@ -2,7 +2,7 @@
 
 Proxy VOMS Integration for the OpenResty-OPA reverse proxy infrstructure, thus enabling usage, testing and validation of VOMS Certificates. 
 
-Development is still in progress.
+This repo supports all the different authentication methods of VOMS4NOA. 
 
 ## Usage
 
@@ -38,7 +38,7 @@ curl --cert "/tmp/x509up_u1000"  --capath "/etc/grid-security/certificates"  --c
 
 - Using simple authentication information 
 ```
-curl  --capath "/etc/grid-security/certificates"  "https://storm-tape.test.example:8081/operation/" -H "X-Role: moderator" -H "X-Operation: report" -H "X-EnableJWT: false"
+curl  --capath "/etc/grid-security/certificates" "https://storm-tape.test.example:8081/operation/" -H "X-Role: moderator" -H "X-Operation: report" -H "X-EnableJWT: false"
 ```
 
 <!-- Aggiungere parte dei metodi di accesso disponibili, aka JWT e VOMS, e come usarli in modo interchangeable -->
@@ -49,19 +49,19 @@ You can use the `storm-tape-debug` tool in the `debug-requester` folder.
 Either way, here are some of the commands you can use to interact with the whole system:
 - staging a request
 ```
-curl -i -d @storm-tape-data/stage_request.json http://localhost:8080/api/v1/stage
+curl -i -d @storm-tape-data/stage_request.json https://storm-tape.test.example:8081/api/v1/stage -H "X-Role: admin" -H "X-EnableJWT: false"
 ```
 - progress tracking
 ```
-curl -i http://localhost:8080/api/v1/stage/6aa34070-d82c-49c5-b4c1-f48046625d2f
+curl -i https://storm-tape.test.example:8081/api/v1/stage/6aa34070-d82c-49c5-b4c1-f48046625d2f -H "X-Role: admin" -H "X-EnableJWT: false"
 ```
 - See archive information (info of the files stored) 
 ```
-curl -i -d @storm-tape-data/archive_info.json http://localhost:8080/api/v1/archiveinfo
+curl -i -d @storm-tape-data/archive_info.json https://storm-tape.test.example:8081/api/v1/archiveinfo -H "X-Role: admin" -H "X-EnableJWT: false"
 ```
 - Delete a stage request
 ```
-curl -X "DELETE" -i http://localhost:8080/api/v1/stage/6aa34070-d82c-49c5-b4c1-f48046625d2f
+curl -X "DELETE" -i https://storm-tape.test.example:8081/api/v1/stage/6aa34070-d82c-49c5-b4c1-f48046625d2f -H "X-Role: admin" -H "X-EnableJWT: false"
 ```
 
 ## About Storm-Tape
