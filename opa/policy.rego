@@ -68,6 +68,7 @@ allow {
     allow_voms
 }
 
-allow_voms {
-    input.voms_vo == data.groups[_]
+# WARNING: da testare!
+allow_voms { 
+    input.operation == data.groups[input.voms_vo][_]
 }
