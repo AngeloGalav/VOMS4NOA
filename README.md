@@ -1,6 +1,8 @@
-# VOMS4NOA
+# VOMS4NOA - Storm-Tape API branch
 
 Proxy VOMS Integration for the OpenResty-OPA reverse proxy infrstructure, thus enabling usage, testing and validation of VOMS Certificates. 
+
+You can find the base NGINX-OPA-Authz (NOA) system [here](https://github.com/AngeloGalav/NGINX-OPA-Authz).
 
 Development is still in progress.
 
@@ -73,9 +75,13 @@ Through this repository:
 - [x] Easing the VOMS creation process (.devcontainer integration)
 - [x] Adding VOMS support in OPA
 - [x] Fix known issues
+- [x] Interfacing with storm-tape.
 - [ ] Enhancing devcontainer with oidc agent token definition
 - [ ] Measure performance of the whole system and draw conclusions
 - [ ] Enhancing bash scripts for interactions/debugging
+
+# Storm-Tape API
+You can find an example of the integration of this system with a real API by visiting the [storm-tape branch](https://github.com/AngeloGalav/VOMS4NOA/tree/storm-tape-integration).
 
 ## Notes
 The service server graphical UI also is not supported anymore. It is suggested to use `debug_requester` for further testing and interacting with the system.
