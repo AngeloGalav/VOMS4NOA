@@ -28,21 +28,24 @@
     ],
     "roles" : {
         "/dev" : [
-            "retrieve", 
-            "submit"
+            "stage", 
+            "get_progress",
+            "delete"
         ],
-        "/analyst" : [ "retrieve" ],
+        "/analyst" : [ "archiveinfo", 
+            "get_progress" ],
         "/admin" : [ 
-            "retrieve", 
-            "submit",
-            "report"
+            "delete", 
+            "get_progress",
+            "stage",
+            "archiveinfo"
         ],
-        "/moderator" : [ "report" ], 
+        "/moderator" : [ "archiveinfo" ], 
         "/banned" : []
     },
     "groups" : {
         "test.vo" : 
-            ["submit", 
-            "report"]
+            ["stage", 
+            "delete"]
     }
 }
