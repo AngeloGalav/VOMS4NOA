@@ -24,6 +24,4 @@ services:
 
   service_server:
     image: baltig.infn.it:4567/giaco/storm-tape-poc:latest
-    ports:
-      - "80:8080"
     command: [/storm-tape-poc/build/storm-tape]
