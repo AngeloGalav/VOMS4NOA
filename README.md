@@ -10,6 +10,9 @@ Development is still in progress.
 
 First of all, you'll need to generate a Proxy VOMS using `voms-proxy-init`. To do that, you'll need to enter the `.devcontainer`, which provides easy use to the VOMS services. You can use the `.devcontainer` inside Visual Studio Code by clicking on the icon in the bottom left with the two angled brackets and selecting "Reopen Folder in Container".
 
+> :warning: **In order to access the `voms-proxy-init` service**, you need to place your user certificate 
+> in `/home/{$USER}/.globus` folder, and an `/home/{$USER}/.config/oidc-agent` folder (a full installation of the service is recommended).
+
 After entering the container, you'll need to create said Proxy VOMS:
 ```bash
 voms-proxy-init -pwstdin -voms test.vo <<< pass
