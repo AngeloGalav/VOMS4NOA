@@ -81,7 +81,7 @@ Through this repository:
 - [x] Interfacing with storm-tape.
 - [ ] Enhancing devcontainer with oidc agent token definition
 - [ ] Measure performance of the whole system and draw conclusions
-- [ ] Enhancing bash scripts for interactions/debugging
+- [x] Enhancing bash scripts for interactions/debugging
 
 # Storm-Tape API
 You can find an example of the integration of this system with a real API by visiting the [storm-tape branch](https://github.com/AngeloGalav/VOMS4NOA/tree/storm-tape-integration).
