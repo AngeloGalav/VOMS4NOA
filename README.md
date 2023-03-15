@@ -79,8 +79,6 @@ Through this repository:
 - [x] Adding VOMS support in OPA
 - [x] Fix known issues
 - [x] Interfacing with storm-tape.
-- [ ] Enhancing devcontainer with oidc agent token definition
-- [ ] Measure performance of the whole system and draw conclusions
 - [x] Enhancing bash scripts for interactions/debugging
 
 # Storm-Tape API
